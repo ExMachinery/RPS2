@@ -28,5 +28,11 @@ function getHumanChoice() {
     }
     return player;
 }
-getHumanChoice();
-console.log(player);
+
+// Game engine
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoi) {
+
+}
