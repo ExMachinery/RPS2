@@ -14,6 +14,19 @@ function getComputerChoice() {
     return enemy;
 }
 
-getComputerChoice();
-console.log(getComputerChoice());
 // Player choice
+let player;
+
+function getHumanChoice() {
+    player = (parseInt(prompt('1 - Rock, 2 - Scissors, 3 - Paper. Give me numba!', )));
+    if (player === 1) {
+        player = 'Rock';
+    } else if (player === 2) {
+        player = 'Scissors';
+    } else {
+        player = 'Paper';
+    }
+    return player;
+}
+getHumanChoice();
+console.log(player);
