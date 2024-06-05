@@ -33,6 +33,36 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoi) {
-
+function playRound(player, enemy) {
+    switch (player) {
+        case (player === enemy):
+            console.log('Draw!');
+            break;
+        case (player == 'Rock'):
+            if (enemy == 'Paper') {
+                alert('AI choose Paper! You lose!');
+                return ++computerScore;
+            } else if (enemy == 'Scissors') {
+                alert('AI choose Scissors! You win!');
+                return ++humanScore;
+            }
+        case (player == 'Scissors'):
+            if (enemy == 'Rock') {
+                alert('AI choose Rock! You lose!');
+                return ++computerScore;
+            } else if (enemy == 'Paper') {
+                alert('AI choose Paper! You win!');
+                return ++humanScore;
+            }
+        case (player == 'Paper'):
+            if (enemy == 'Scissors') {
+                alert('AI choose Scissors! You lose!');
+                return ++computerScore;
+            } else if (enemy == 'Rock') {
+                alert('AI choose Rock! You win!');
+                return ++humanScore;
+            }
+    }
+    console.log(humanScore);
+    console.log(computerScore);
 }
