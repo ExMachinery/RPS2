@@ -33,36 +33,66 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(player, enemy) {
-    switch (player) {
-        case (player === enemy):
-            console.log('Draw!');
-            break;
-        case (player == 'Rock'):
-            if (enemy == 'Paper') {
-                alert('AI choose Paper! You lose!');
-                return ++computerScore;
-            } else if (enemy == 'Scissors') {
-                alert('AI choose Scissors! You win!');
-                return ++humanScore;
-            }
-        case (player == 'Scissors'):
-            if (enemy == 'Rock') {
-                alert('AI choose Rock! You lose!');
-                return ++computerScore;
-            } else if (enemy == 'Paper') {
-                alert('AI choose Paper! You win!');
-                return ++humanScore;
-            }
-        case (player == 'Paper'):
-            if (enemy == 'Scissors') {
-                alert('AI choose Scissors! You lose!');
-                return ++computerScore;
-            } else if (enemy == 'Rock') {
-                alert('AI choose Rock! You win!');
-                return ++humanScore;
-            }
+function playRound() {
+    let human = player;
+    let AI = enemy;
+    console.log(AI, human);
+
+    if (human == AI) {
+        alert('Draw!')
+    }else if (human == 'Rock') {
+        if (AI == 'Paper') {
+            alert('AI choose Paper! You lose!');
+            return ++computerScore;
+        } else if (AI == 'Scissors') {
+            alert('AI choose Scissors! You win!');
+            return ++humanScore;
+        }
+    } else if (human == 'Scissors') {
+        if (AI == 'Rock') {
+            alert('AI choose Rock! You lose!');
+            return ++computerScore;
+        } else if (AI == 'Paper') {
+            alert('AI choose Paper! You win!');
+            return ++humanScore;
+        }
+    } else if (human == 'Paper') {
+        if (AI == 'Scissors') {
+            alert('AI choose Scissors! You lose!');
+            return ++computerScore;
+        } else if (AI == 'Rock') {
+            alert('AI choose Rock! You win!');
+            return ++humanScore;
+        }
     }
     console.log(humanScore);
     console.log(computerScore);
+}
+
+// Starter
+let round = 5;
+function playGame() {
+        getComputerChoice();
+        getHumanChoice();
+        playRound();
+}
+
+for (let i = 0; i < round; i++) {
+    playGame();
+}
+
+
+alert(`Total Score. You: ${humanScore}, AI: ${computerScore}`);
+switch (true) {
+    case (humanScore < computerScore):
+        alert('You have been bitten by AI, son! Shame!');
+        break;
+    case (humanScore > computerScore):
+        alert('You beat dumbass AI. Hope you proud of yourself.');
+        break;
+    case (humanScore === computerScore):
+        alert('Wow, you reach dumb AI in your RPS skill! Good job!');
+        break;
+    default:
+        console.log('Cases still doesnt work properly');
 }
