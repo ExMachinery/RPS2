@@ -40,26 +40,26 @@ function playRound() {
         result.textContent = "Draw!";
     } else if (human == 'Rock') {
         if (AI == 'Paper') {
-            result.textContent = "AI choose Paper! You loose!";
+            result.textContent = "AI chose Paper! You lose!";
             computerScore += 1;
         } else if (AI == 'Scissors') {
-            result.textContent = 'AI choose Scissors! You win!';
+            result.textContent = 'AI chose Scissors! You win!';
             humanScore += 1;
         }
     } else if (human == 'Scissors') {
         if (AI == 'Rock') {
-            result.textContent = 'AI choose Rock! You lose!';
+            result.textContent = 'AI chose Rock! You lose!';
             computerScore += 1;
         } else if (AI == 'Paper') {
-            result.textContent = 'AI choose Paper! You win!';
+            result.textContent = 'AI chose Paper! You win!';
             humanScore += 1;
         }
     } else if (human == 'Paper') {
         if (AI == 'Scissors') {
-            result.textContent = 'AI choose Scissors! You lose!';
+            result.textContent = 'AI chose Scissors! You lose!';
             computerScore += 1;
         } else if (AI == 'Rock') {
-            result.textContent = 'AI choose Rock! You win!';
+            result.textContent = 'AI chose Rock! You win!';
             humanScore += 1;
         }
     }
@@ -74,7 +74,7 @@ function playRound() {
         computerScore = 0;
     }
     if (computerScore == 5) {
-        final.textContent = 'You have been bitten by AI, son! Shame!';
+        final.textContent = 'You have been beaten by AI, son! Shame!';
         score.textContent = `You: ${humanScore} AI: ${computerScore}`;
         humanScore = 0;
         computerScore = 0;
